@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="15" fill="#10120f"/>
+  <path d="M12 13h40v3H12z" fill="#d7b15c" opacity=".9"/>
+  <text x="32" y="40" fill="#d7b15c" font-family="Arial,sans-serif" font-size="19" font-weight="700" letter-spacing="-1.6" text-anchor="middle">TIO</text>
+  <circle cx="32" cy="51" r="2" fill="#f2f3ed"/>
+</svg>
