@@ -31,6 +31,24 @@ const projects = [
     number: "02",
     url: "https://virtual-museum-ebon.vercel.app/",
     previewUrl: "https://virtual-museum-ebon.vercel.app/"
+  },
+  {
+    title: "Last Light",
+    category: "Games",
+    type: "SURVIVAL ROGUELITE / LIVE",
+    summary: "A browser survival roguelite where you are the last light in an endless dark. Choose from three classes, dodge while your light fires automatically, gather gems and upgrades, and face a boss every 75 seconds as your shrinking light gives way to the dark on the road to the Eclipse.",
+    image: "assets/last-light-preview.jpg",
+    number: "03",
+    url: "https://last-light-cyan.vercel.app/"
+  },
+  {
+    title: "Tidebound: The Drowned Bell",
+    category: "Games",
+    type: "STORY RPG / LIVE",
+    summary: "An illustrated, three-act adventure about a vanishing tide and a bell calling a village into the sea, told across 132 scenes and ten endings. Read the odds before each choice, outthink enemies in telegraphed tactical combat, and shape bonds and gear as the code-painted world and generative soundtrack shift around your journey.",
+    image: "assets/tidebound-preview.jpg",
+    number: "04",
+    url: "https://tidebound-chi.vercel.app/"
   }
 ];
 
@@ -49,9 +67,10 @@ function renderProjects(filter = "All") {
   resultLabel.id = `category-${filter.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
   grid.innerHTML = visible.length ? visible.map((project, index) => `
     <article class="project-card" style="animation-delay:${index * 70}ms">
-      <div class="project-preview">
+      <div class="project-preview${project.image ? " has-image" : ""}">
+        ${project.image ? `<img class="project-screenshot" src="${project.image}" alt="" loading="lazy" />` : ""}
         <span class="preview-label">${project.type}</span><span class="preview-index">${project.number} / ${String(projects.length).padStart(2, "0")}</span>
-        ${project.previewUrl ? `<div class="live-preview project-live-preview"><div class="preview-fallback" aria-hidden="true"><strong>${project.title}</strong><span>LIVE PROJECT PREVIEW</span></div><iframe src="${project.previewUrl}" title="Live preview of ${project.title}" loading="lazy" referrerpolicy="no-referrer" tabindex="-1"></iframe></div>` : `<div class="preview-art">${previewArt[project.visual] || previewArt.website}</div>`}
+        ${project.previewUrl ? `<div class="live-preview project-live-preview"><div class="preview-fallback" aria-hidden="true"><strong>${project.title}</strong><span>LIVE PROJECT PREVIEW</span></div><iframe src="${project.previewUrl}" title="Live preview of ${project.title}" loading="lazy" referrerpolicy="no-referrer" tabindex="-1"></iframe></div>` : project.image ? "" : `<div class="preview-art">${previewArt[project.visual] || previewArt.website}</div>`}
         <a class="project-preview-link" href="${project.url}" ${/^https?:/.test(project.url) ? 'target="_blank" rel="noreferrer"' : ""} aria-label="Open ${project.title}"></a>
       </div>
       <div class="project-info"><div><h3>${project.title}</h3><p>${project.summary}</p></div><div class="project-meta"><span>${project.category.toUpperCase()}</span><b>↗</b></div></div>

@@ -14,4 +14,4 @@ Open `index.html` in a browser. The Google Fonts import needs an internet connec
 4. Update any stack items in the “Tools of the trade” section of `index.html` as your toolkit changes.
 5. Replace `assets/toluwani-olalemi.jpg` if you want to use a different portrait.
 
-Splitly and Virtual Museum are included as live projects; add more items to the `projects` array as your portfolio grows. GitHub and LinkedIn profile links are still placeholders.
+Splitly and Virtual Museum are live web projects. Last Light and Tidebound: The Drowned Bell are live game projects with optimized screenshot previews in `assets/`. Add more items to the `projects` array in `script.js` as your portfolio grows; set `category` to `Web` or `Games` to include each project in its filter.
